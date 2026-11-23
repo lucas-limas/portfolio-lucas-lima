@@ -1,0 +1,861 @@
+/* ==========================================
+   PORTFÓLIO - LUCAS LIMA NASCIMENTO
+   Estilo "neo-brutalista": bordas pretas
+   grossas, sombras duras e cores fortes.
+   ========================================== */
+
+
+/* ---------- 1. CORES E MEDIDAS ---------- */
+:root {
+  --fundo: #e9ecf5;
+  --branco: #ffffff;
+  --preto: #111111;
+  --texto-suave: #3f3f46;
+
+  /* cores de destaque */
+  --lima: #c4f53b;
+  --roxo: #6d3df5;
+  --rosa: #ff8fc2;
+  --amarelo: #ffd93d;
+
+  /* borda e sombra usadas em quase todas as caixas */
+  --borda: 3px solid var(--preto);
+  --sombra: 6px 6px 0 var(--preto);
+}
+
+
+/* ---------- 2. CONFIGURAÇÕES GERAIS ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Space Grotesk", Arial, sans-serif;
+  color: var(--preto);
+  line-height: 1.6;
+  background-color: var(--fundo);
+  /* fundo quadriculado, tipo folha de caderno */
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* contorno visível quando a pessoa navega com o teclado (tecla Tab) */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--roxo);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 88%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* caixa branca padrão com borda e sombra */
+.caixa {
+  background-color: var(--branco);
+  border: var(--borda);
+  box-shadow: var(--sombra);
+}
+
+/* classes de cor reaproveitadas em vários lugares */
+.fundo-lima    { background-color: var(--lima); }
+.fundo-roxo    { background-color: var(--roxo); color: var(--branco); }
+.fundo-rosa    { background-color: var(--rosa); }
+.fundo-amarelo { background-color: var(--amarelo); }
+
+
+/* ---------- 3. BARRA DE PROGRESSO ---------- */
+.barra-progresso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 0%; /* o JavaScript aumenta essa largura conforme a rolagem */
+  height: 6px;
+  background-color: var(--roxo);
+}
+
+
+/* ---------- 4. CABEÇALHO ---------- */
+.cabecalho {
+  position: sticky; /* o menu acompanha a rolagem */
+  top: 16px;
+  z-index: 100;
+  margin-top: 16px;
+}
+
+.barra-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: var(--branco);
+  border: var(--borda);
+  box-shadow: 4px 4px 0 var(--preto);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-caixa {
+  padding: 2px 8px;
+  background-color: var(--lima);
+  border: 2px solid var(--preto);
+}
+
+.menu {
+  display: flex;
+  gap: 6px;
+}
+
+.menu a {
+  padding: 6px 12px;
+  font-weight: 500;
+  border: 2px solid transparent;
+  transition: background-color 0.15s;
+}
+
+.menu a:hover {
+  background-color: var(--lima);
+  border-color: var(--preto);
+}
+
+/* botão "Menu" só aparece no celular */
+.botao-menu {
+  display: none;
+  padding: 6px 14px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background-color: var(--lima);
+  border: 2px solid var(--preto);
+  cursor: pointer;
+}
+
+
+/* ---------- 5. BOTÕES ---------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-weight: 700;
+  background-color: var(--branco);
+  border: var(--borda);
+  box-shadow: 4px 4px 0 var(--preto);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* ao passar o mouse o botão "afunda" em cima da sombra */
+.botao:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--preto);
+}
+
+.botao-escuro {
+  background-color: var(--preto);
+  color: var(--lima);
+}
+
+
+/* ---------- 6. INÍCIO ---------- */
+.inicio {
+  padding: 80px 0 90px;
+}
+
+.inicio-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.inicio-texto {
+  flex: 1;
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 16px;
+  font-family: "Space Mono", monospace;
+  background-color: var(--branco);
+  border: 2px solid var(--preto);
+}
+
+.nome {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+/* "Lima" com fundo verde-limão, combinando com o nome :) */
+.destaque-lima {
+  display: inline-block;
+  padding: 0 12px;
+  margin: 6px 0;
+  background-color: var(--lima);
+  border: var(--borda);
+  transform: rotate(-2deg);
+}
+
+.digitando {
+  min-height: 1.8em; /* evita que o texto "pule" enquanto é digitado */
+  margin-top: 24px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  color: var(--roxo);
+}
+
+/* cursor piscando no final do texto */
+.cursor {
+  animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+  50% { opacity: 0; }
+}
+
+.frase {
+  max-width: 540px;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+/* cartão com as iniciais */
+.cartao-foto {
+  position: relative;
+  flex-shrink: 0;
+  width: 300px;
+  padding: 16px 16px 12px;
+  background-color: var(--branco);
+  border: var(--borda);
+  box-shadow: 10px 10px 0 var(--preto);
+  transform: rotate(3deg);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* caso vire uma foto <img> */
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--lima);
+  background-color: var(--roxo);
+  border: var(--borda);
+}
+
+.legenda {
+  margin-top: 10px;
+  font-family: "Space Mono", monospace;
+  text-align: center;
+}
+
+/* adesivo redondo colado no canto do cartão */
+.adesivo {
+  position: absolute;
+  top: -26px;
+  right: -26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 86px;
+  height: 86px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  text-align: center;
+  background-color: var(--rosa);
+  border: var(--borda);
+  border-radius: 50%;
+  transform: rotate(12deg);
+}
+
+
+/* ---------- 7. FAIXA ROLANDO ---------- */
+.faixa {
+  overflow: hidden; /* esconde o texto que passa da tela */
+  padding: 14px 0;
+  background-color: var(--preto);
+  border-top: var(--borda);
+  border-bottom: var(--borda);
+}
+
+.faixa-conteudo {
+  display: flex;
+  width: max-content;
+  animation: rolar 30s linear infinite;
+}
+
+.faixa-conteudo span {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--lima);
+}
+
+/* move o texto para a esquerda até a metade (onde começa a cópia) */
+@keyframes rolar {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+/* ---------- 8. SEÇÕES E TÍTULOS ---------- */
+.secao {
+  padding: 80px 0;
+  scroll-margin-top: 70px; /* para o menu não cobrir o título */
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.numero {
+  padding: 2px 10px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.1rem;
+  color: var(--lima);
+  background-color: var(--preto);
+}
+
+
+/* ---------- 9. SOBRE MIM ---------- */
+.sobre {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.sobre-texto {
+  flex: 2;
+  padding: 30px;
+}
+
+.sobre-texto p {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  color: var(--texto-suave);
+}
+
+.sobre-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.sobre-texto strong {
+  color: var(--preto);
+  background-color: var(--lima);
+}
+
+/* ficha com as informações, em estilo de "código" */
+.ficha {
+  flex: 1;
+  padding: 24px;
+  font-family: "Space Mono", monospace;
+  background-color: var(--amarelo);
+}
+
+.ficha li {
+  padding: 10px 0;
+  border-bottom: 2px dashed var(--preto);
+}
+
+.ficha li:last-child {
+  border-bottom: none;
+}
+
+.ficha span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+
+/* ---------- 10. TRAJETÓRIA ---------- */
+.trajetoria {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 850px;
+}
+
+/* cada etapa é uma linha: período na esquerda, texto na direita */
+.etapa {
+  display: flex;
+  background-color: var(--branco);
+  border: var(--borda);
+  box-shadow: var(--sombra);
+}
+
+.periodo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 190px;
+  padding: 16px 20px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-right: var(--borda);
+}
+
+.etapa-texto {
+  padding: 16px 24px;
+}
+
+.etapa-texto h3 {
+  font-size: 1.25rem;
+}
+
+.etapa-texto p {
+  color: var(--texto-suave);
+}
+
+
+/* ---------- 11. HABILIDADES ---------- */
+.habilidades {
+  display: flex;
+  gap: 30px;
+}
+
+.grupo-habilidade {
+  flex: 1;
+}
+
+.grupo-habilidade h3 {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-bottom: var(--borda);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+
+.tags li {
+  padding: 4px 12px;
+  font-weight: 500;
+  border: 2px solid var(--preto);
+  box-shadow: 3px 3px 0 var(--preto);
+  transition: background-color 0.15s;
+}
+
+.tags li:hover {
+  background-color: var(--lima);
+}
+
+
+/* ---------- 12. PROJETOS ---------- */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.filtro {
+  padding: 8px 18px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background-color: var(--branco);
+  border: 2px solid var(--preto);
+  box-shadow: 3px 3px 0 var(--preto);
+  cursor: pointer;
+}
+
+.filtro:hover {
+  background-color: var(--lima);
+}
+
+/* botão do filtro que está selecionado */
+.filtro.ativo {
+  color: var(--lima);
+  background-color: var(--preto);
+}
+
+.projetos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+  gap: 28px;
+}
+
+/* o JavaScript coloca essa classe nos cards que não batem com o filtro */
+.card-projeto.escondido {
+  display: none;
+}
+
+/* cada card parece uma "janelinha" de computador */
+.card-projeto {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--branco);
+  border: var(--borda);
+  box-shadow: var(--sombra);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card-projeto:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 var(--preto);
+}
+
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 14px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-bottom: var(--borda);
+}
+
+.bolinhas {
+  letter-spacing: 2px;
+}
+
+.card-corpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* faz todos os cards da linha terem a mesma altura */
+  padding: 22px;
+}
+
+.card-corpo h3 {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.card-corpo p {
+  margin-bottom: 14px;
+  color: var(--texto-suave);
+}
+
+.tecnologias {
+  font-family: "Space Mono", monospace;
+  font-size: 0.85rem;
+}
+
+/* o link fica sempre no final do card */
+.link-projeto {
+  align-self: flex-start;
+  margin-top: auto;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 3px solid var(--roxo);
+}
+
+.link-projeto:hover {
+  background-color: var(--lima);
+}
+
+
+/* ---------- 13. CONTATO ---------- */
+.contato {
+  max-width: 750px;
+  padding: 40px;
+  background-color: var(--lima);
+}
+
+.contato h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.contato p {
+  margin: 12px 0 28px;
+  font-size: 1.1rem;
+}
+
+.contato .local {
+  margin: 24px 0 0;
+  font-family: "Space Mono", monospace;
+}
+
+
+/* ---------- 14. RODAPÉ ---------- */
+.rodape {
+  padding: 24px 6%;
+  font-family: "Space Mono", monospace;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--branco);
+  background-color: var(--preto);
+  border-top: var(--borda);
+}
+
+
+/* ---------- 15. MENOS ANIMAÇÃO ---------- */
+/* para quem configurou o computador para reduzir movimentos */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .faixa-conteudo,
+  .cursor {
+    animation: none;
+  }
+}
+
+
+/* ==========================================
+   16. RESPONSIVIDADE
+   As regras abaixo só valem em telas menores.
+   ========================================== */
+
+/* ----- Tablet (até 1024px) ----- */
+@media (max-width: 1024px) {
+  .menu a {
+    padding: 6px 8px;
+  }
+
+  .nome {
+    font-size: 4rem;
+  }
+
+  .cartao-foto {
+    width: 250px;
+  }
+
+  .avatar {
+    height: 240px;
+    font-size: 5rem;
+  }
+
+  /* 2 cards de projeto por linha */
+  .projetos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .habilidades {
+    flex-wrap: wrap;
+  }
+
+  .grupo-habilidade {
+    flex-basis: 280px;
+  }
+}
+
+/* ----- Celular (até 768px) ----- */
+@media (max-width: 768px) {
+  .botao-menu {
+    display: block;
+  }
+
+  /* menu escondido; aparece embaixo da barra quando ganha a classe "aberto" */
+  .menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--branco);
+    border: var(--borda);
+    box-shadow: 4px 4px 0 var(--preto);
+  }
+
+  .menu.aberto {
+    display: flex;
+  }
+
+  .menu a {
+    padding: 14px 18px;
+    border: none;
+    border-bottom: 2px solid var(--preto);
+  }
+
+  .menu a:last-child {
+    border-bottom: none;
+  }
+
+  .inicio {
+    padding: 60px 0 70px;
+  }
+
+  /* o cartão vai para cima do texto */
+  .inicio-conteudo {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+
+  .inicio-texto {
+    flex: none;
+    width: 100%;
+  }
+
+  .nome {
+    font-size: 3.4rem;
+  }
+
+  .secao {
+    padding: 60px 0;
+  }
+
+  .titulo {
+    font-size: 1.9rem;
+  }
+
+  /* caixas que ficavam lado a lado passam a ficar uma embaixo da outra */
+  .sobre,
+  .habilidades {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .grupo-habilidade {
+    flex-basis: auto;
+  }
+
+  /* na trajetória, o período fica em cima do texto */
+  .etapa {
+    flex-direction: column;
+  }
+
+  .periodo {
+    width: 100%;
+    padding: 8px 20px;
+    border-right: none;
+    border-bottom: var(--borda);
+  }
+
+  /* 1 card de projeto por linha */
+  .projetos {
+    grid-template-columns: 1fr;
+  }
+
+  .contato {
+    padding: 28px;
+  }
+}
+
+/* ----- Celular pequeno (até 480px) ----- */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nome {
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+  }
+
+  .digitando {
+    min-height: 3.6em; /* aqui a frase pode quebrar em duas linhas */
+    font-size: 1rem;
+  }
+
+  .cartao-foto {
+    width: 220px;
+  }
+
+  .avatar {
+    height: 200px;
+    font-size: 4rem;
+  }
+
+  .legenda {
+    font-size: 0.85rem;
+  }
+
+  .adesivo {
+    top: -20px;
+    right: -16px;
+    width: 72px;
+    height: 72px;
+    font-size: 0.8rem;
+  }
+
+  /* botões um embaixo do outro, ocupando a largura toda */
+  .botoes {
+    flex-direction: column;
+  }
+
+  .botao {
+    justify-content: center;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+  }
+
+  .sobre-texto,
+  .ficha {
+    padding: 20px;
+  }
+
+  .contato {
+    padding: 22px;
+  }
+
+  .contato h3 {
+    font-size: 1.5rem;
+  }
+
+  .botao-github {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}

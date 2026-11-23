@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Lima Nascimento | Portfólio</title>
+
+  <!-- Fontes: Space Grotesk (textos) e Space Mono (detalhes em "código") -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- barrinha roxa no topo que mostra quanto da página já foi lida -->
+  <div id="barra-progresso" class="barra-progresso"></div>
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header class="cabecalho">
+    <div class="container barra-menu">
+      <a href="#inicio" class="logo">
+        <span class="logo-caixa">LN</span>
+        lucas.lima
+      </a>
+
+      <nav id="menu" class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#trajetoria">Trajetória</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button id="botao-menu" class="botao-menu">Menu</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== INÍCIO ===== -->
+    <section id="inicio" class="inicio">
+      <div class="container inicio-conteudo">
+
+        <div class="inicio-texto">
+          <p class="etiqueta">👋 Olá, eu sou o</p>
+
+          <h1 class="nome">
+            Lucas<br>
+            <span class="destaque-lima">Lima</span><br>
+            Nascimento
+          </h1>
+
+          <!-- o texto dentro do span é escrito letra por letra pelo JavaScript -->
+          <p class="digitando">&gt; <span id="texto-digitando"></span><span class="cursor">_</span></p>
+
+          <p class="frase">Gosto de transformar ideias em sites, sistemas e automações, e de usar Inteligência Artificial para resolver problemas de verdade.</p>
+
+          <div class="botoes">
+            <a href="#projetos" class="botao botao-escuro">Ver projetos →</a>
+            <a href="https://github.com/lucas-limas" target="_blank" class="botao">Meu GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- cartão com as iniciais no lugar da foto -->
+        <!-- para usar uma foto: salve ela na pasta "imagens" e troque a div "avatar" por:
+             <img src="imagens/sua-foto.jpeg" alt="Foto de Lucas" class="avatar"> -->
+        <div class="cartao-foto">
+          <div class="avatar">LN</div>
+          <p class="legenda">SI · UDF · Brasília</p>
+          <span class="adesivo">IA +<br>n8n</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== FAIXA COM AS TECNOLOGIAS (fica rolando sozinha) ===== -->
+    <!-- o texto aparece duas vezes para a animação não ter "buraco" -->
+    <div class="faixa">
+      <div class="faixa-conteudo">
+        <span>HTML ✦ CSS ✦ JavaScript ✦ Python ✦ Java ✦ SQL ✦ n8n ✦ Git ✦ Inteligência Artificial ✦ Engenharia de Prompt ✦ Automação ✦&nbsp;</span>
+        <span>HTML ✦ CSS ✦ JavaScript ✦ Python ✦ Java ✦ SQL ✦ n8n ✦ Git ✦ Inteligência Artificial ✦ Engenharia de Prompt ✦ Automação ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ===== 01 - SOBRE MIM ===== -->
+    <section id="sobre" class="secao">
+      <div class="container">
+        <h2 class="titulo"><span class="numero">01</span> Sobre mim</h2>
+
+        <div class="sobre">
+          <div class="caixa sobre-texto">
+            <p>Sou o Lucas, estudante de <strong>Sistemas de Informação na UDF</strong>, em Brasília. Sempre fui curioso para entender como as coisas funcionam por trás da tela, e foi isso que me trouxe para a tecnologia.</p>
+            <p>Hoje trabalho com tecnologia na <strong>Saúde Prime Seguros e Saúde</strong>, uma corretora de planos de saúde. Lá eu crio sistemas, páginas e automações que ajudam o time comercial no dia a dia, desde um cotador de planos até um assistente virtual que atende clientes pelo WhatsApp.</p>
+            <p>Sou proativo, comunicativo e organizado. Gosto de aprender fazendo: pego um problema real, estudo e coloco a mão no código até funcionar.</p>
+          </div>
+
+          <ul class="caixa ficha">
+            <li><span>curso:</span> Sistemas de Informação</li>
+            <li><span>faculdade:</span> UDF</li>
+            <li><span>cidade:</span> Brasília - DF</li>
+            <li><span>foco:</span> IA e automação</li>
+            <li><span>status:</span> sempre aprendendo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 - TRAJETÓRIA ===== -->
+    <section id="trajetoria" class="secao">
+      <div class="container">
+        <h2 class="titulo"><span class="numero">02</span> Trajetória</h2>
+
+        <div class="trajetoria">
+          <div class="etapa">
+            <span class="periodo fundo-lima">Em andamento</span>
+            <div class="etapa-texto">
+              <h3>Sistemas de Informação</h3>
+              <p>UDF - Centro Universitário do Distrito Federal</p>
+            </div>
+          </div>
+
+          <div class="etapa">
+            <span class="periodo fundo-roxo">Trabalho atual</span>
+            <div class="etapa-texto">
+              <h3>Tecnologia e automação</h3>
+              <p>Saúde Prime Seguros e Saúde: sistemas comerciais, landing pages, automações e agentes de IA.</p>
+            </div>
+          </div>
+
+          <div class="etapa">
+            <span class="periodo fundo-rosa">Estudos</span>
+            <div class="etapa-texto">
+              <h3>Engenharia de Prompt e Aplicações de IA</h3>
+              <p>Atividades práticas sobre como usar IA generativa em projetos reais.</p>
+            </div>
+          </div>
+
+          <div class="etapa">
+            <span class="periodo fundo-amarelo">Concluído</span>
+            <div class="etapa-texto">
+              <h3>Ensino Médio</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 - HABILIDADES ===== -->
+    <section id="habilidades" class="secao">
+      <div class="container">
+        <h2 class="titulo"><span class="numero">03</span> Habilidades</h2>
+
+        <div class="habilidades">
+          <div class="caixa grupo-habilidade">
+            <h3 class="fundo-lima">Código</h3>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Python</li>
+              <li>Java</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+
+          <div class="caixa grupo-habilidade">
+            <h3 class="fundo-roxo">Ferramentas</h3>
+            <ul class="tags">
+              <li>Git e GitHub</li>
+              <li>n8n</li>
+              <li>VS Code</li>
+              <li>Google Sheets</li>
+              <li>IA generativa</li>
+              <li>Engenharia de Prompt</li>
+            </ul>
+          </div>
+
+          <div class="caixa grupo-habilidade">
+            <h3 class="fundo-rosa">Pessoais</h3>
+            <ul class="tags">
+              <li>Comunicação</li>
+              <li>Proatividade</li>
+              <li>Organização</li>
+              <li>Trabalho em equipe</li>
+              <li>Criatividade</li>
+              <li>Vontade de aprender</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 - PROJETOS ===== -->
+    <section id="projetos" class="secao">
+      <div class="container">
+        <h2 class="titulo"><span class="numero">04</span> Projetos</h2>
+
+        <!-- botões de filtro: o "data-categoria" diz quais cards cada botão mostra -->
+        <div class="filtros">
+          <button class="filtro ativo" data-categoria="todos">Todos</button>
+          <button class="filtro" data-categoria="trabalho">Trabalho</button>
+          <button class="filtro" data-categoria="faculdade">Faculdade</button>
+          <button class="filtro" data-categoria="pessoal">Pessoal</button>
+        </div>
+
+        <div class="projetos">
+
+          <article class="card-projeto" data-categoria="trabalho">
+            <div class="card-topo fundo-lima">
+              <span class="bolinhas">● ● ●</span>
+              <span>trabalho</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Cotador de planos de saúde</h3>
+              <p>Sistema comercial que compara planos de várias operadoras e monta uma apresentação pronta para o cliente.</p>
+              <p class="tecnologias">HTML · CSS · JavaScript · Python</p>
+              <a href="https://github.com/lucas-limas/cotprime" target="_blank" class="link-projeto">ver no GitHub ↗</a>
+            </div>
+          </article>
+
+          <article class="card-projeto" data-categoria="trabalho">
+            <div class="card-topo fundo-roxo">
+              <span class="bolinhas">● ● ●</span>
+              <span>trabalho</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Agente de IA no WhatsApp</h3>
+              <p>Assistente virtual que conversa com os clientes, entende o que eles precisam e passa o atendimento para um corretor.</p>
+              <p class="tecnologias">n8n · IA · WhatsApp</p>
+            </div>
+          </article>
+
+          <article class="card-projeto" data-categoria="trabalho">
+            <div class="card-topo fundo-rosa">
+              <span class="bolinhas">● ● ●</span>
+              <span>trabalho</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Landing page para Google Ads</h3>
+              <p>Página de captação de clientes para campanhas no Google Ads, com os contatos indo direto para uma planilha.</p>
+              <p class="tecnologias">HTML · CSS · JavaScript · Google Sheets</p>
+              <a href="https://github.com/lucas-limas/saude-prime-google-ads-landing" target="_blank" class="link-projeto">ver no GitHub ↗</a>
+            </div>
+          </article>
+
+          <article class="card-projeto" data-categoria="trabalho">
+            <div class="card-topo fundo-amarelo">
+              <span class="bolinhas">● ● ●</span>
+              <span>trabalho</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Automação de prospecção</h3>
+              <p>Fluxo automático que encontra empresas no Google Maps, organiza os dados numa planilha e ajuda o time a fazer o primeiro contato.</p>
+              <p class="tecnologias">n8n · Google Sheets · APIs</p>
+            </div>
+          </article>
+
+          <article class="card-projeto" data-categoria="pessoal">
+            <div class="card-topo fundo-lima">
+              <span class="bolinhas">● ● ●</span>
+              <span>pessoal</span>
+            </div>
+            <div class="card-corpo">
+              <h3>EstudENEM</h3>
+              <p>Plataforma de estudos para o ENEM com repetição espaçada e caderno de erros, usando questões ligadas às fontes oficiais do INEP.</p>
+              <p class="tecnologias">Next.js · Banco de dados · Em desenvolvimento</p>
+            </div>
+          </article>
+
+          <article class="card-projeto" data-categoria="faculdade">
+            <div class="card-topo fundo-roxo">
+              <span class="bolinhas">● ● ●</span>
+              <span>faculdade</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Desafio colaborativo de Git</h3>
+              <p>Atividade em dupla para praticar branches, Pull Requests, code review e resolução de conflitos.</p>
+              <p class="tecnologias">Git · GitHub</p>
+              <a href="https://github.com/lucas-limas/desafio-colaborativo-git" target="_blank" class="link-projeto">ver no GitHub ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 05 - CONTATO ===== -->
+    <section id="contato" class="secao">
+      <div class="container">
+        <h2 class="titulo"><span class="numero">05</span> Contato</h2>
+
+        <div class="caixa contato">
+          <h3>Bora trocar uma ideia?</h3>
+          <p>Quer conversar sobre tecnologia, automação ou algum projeto? Dá uma olhada no meu GitHub e me chama por lá!</p>
+
+          <a href="https://github.com/lucas-limas" target="_blank" class="botao botao-escuro botao-github">
+            <!-- ícone do GitHub feito com SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+            github.com/lucas-limas
+          </a>
+
+          <p class="local">📍 Brasília - DF</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <p>&copy; <span id="ano"></span> Lucas Lima Nascimento · feito com HTML, CSS e JavaScript</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
