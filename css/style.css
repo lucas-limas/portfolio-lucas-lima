@@ -275,15 +275,11 @@ button:focus-visible {
 }
 
 .avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 100%;
   height: 300px;
-  object-fit: cover; /* caso vire uma foto <img> */
-  font-size: 6rem;
-  font-weight: 700;
-  color: var(--lima);
+  object-fit: cover; /* corta a foto sem deixar ela esticada */
+  object-position: center 30%; /* foca no rosto */
   background-color: var(--roxo);
   border: var(--borda);
 }
@@ -680,7 +676,6 @@ button:focus-visible {
 
   .avatar {
     height: 240px;
-    font-size: 5rem;
   }
 
   /* 2 cards de projeto por linha */
@@ -813,7 +808,6 @@ button:focus-visible {
 
   .avatar {
     height: 200px;
-    font-size: 4rem;
   }
 
   .legenda {
